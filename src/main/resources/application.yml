@@ -1,0 +1,27 @@
+spring:
+#数据源配置
+  data:
+    mongodb:
+    # 主机地址
+    # host: 127.0.0.1
+    # 数据库
+    # database: articledb
+    # 默认端口是27017
+    # port: 27017
+    # 也可以使用uri连接
+    # uri: mongodb://127.0.0.1:27017/articledb
+      # 副本集的连接字符串
+      # slaveOk=true：开启副本节点读的功能，可实现读写分离。
+      # connect=replicaSet：自动到副本集中选择读写的主机。如果slaveOK是打开的，则实现了读写分离
+      # replicaSet为副本集名称
+      # uri: mongodb://127.0.0.1:27018,127.0.0.1:27019,127.0.0.1:27020/articledb?connect=replicaSet&slaveOk=true&replicaSet=myrs1
+      uri: mongodb://127.0.0.1:27018,127.0.0.1:27019/articledb
+
+#日志配置
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: DEBUG
